@@ -1,0 +1,7 @@
+#post_tweet_1 > input{
+    display: none;
+    background-color: red;
+}
+#post_tweet_1 > label{
+    cursor: pointer;
+  }

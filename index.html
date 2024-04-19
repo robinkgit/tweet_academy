@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/skeleton/normalize.css">
+    <link rel="stylesheet" href="/skeleton/skeleton.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function sendData()
+{
+  var firstname = document.getElementById("firstname").value;
+  var lastname = document.getElementById("lastname").value;
+  var birthdate = document.getElementById("birthdate").value;
+  var mail =document.getElementById("mail").value;
+  var pwd =document.getElementById("pwd").value;
+  $.ajax({
+    type: 'post',
+    url: 'insert.php',
+    data: {
+      lastname:lastname,
+      firstname:firstname,
+      birthdate:birthdate,
+      mail:mail,
+      pwd:pwd
+    },
+  
+  });
+    
+  return false;
+}
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+        <form method="POST" onsubmit="return sendData();">
+          <label for="lastname">Nom :</label>
+            <input type="text" name="lastname" id="lastname">
+
+            <label for="firstname">Prénom :</label>
+            <input type="text" name="firstname" id="firstname">
+
+
+            <label for="birthdate">Date de naissance :</label>
+            <input type="date" name="birthdate" id="birthdate">
+
+            <label for="mail">Adresse mail :</label>
+            <input type="email" name="mail" id="mail">
+
+            <label for="pwd">Mot de passe :</label>
+            <input type="password" name="pwd" id="pwd">
+
+            <input type="submit" value="submit">
+        </div>
+    </div>
+  </form>
+</body>
+</html>
